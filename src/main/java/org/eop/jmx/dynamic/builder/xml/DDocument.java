@@ -1,6 +1,6 @@
 package org.eop.jmx.dynamic.builder.xml;
 
-import org.eop.claw.Claw;
+import org.eop.claw.IClaw;
 import org.eop.jmx.builder.xml.Declaration;
 import org.eop.jmx.builder.xml.DocType;
 import org.eop.jmx.builder.xml.Document;
@@ -14,7 +14,7 @@ public class DDocument extends DCNode implements IDDocument {
 
 	private Document document;
 	
-	public DDocument(IXNode parent, String name, String path, Claw claw) {
+	public DDocument(IXNode parent, String name, String path, IClaw claw) {
 		super(parent, name, path);
 		this.document = new Document(parent, name);
 		this.claw = claw;

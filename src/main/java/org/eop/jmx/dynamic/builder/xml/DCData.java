@@ -21,7 +21,7 @@ public class DCData extends DXNode {
 	@Override
 	void prepare() {
 		fetchParentClaw();
-		cdata = new CData(null, getParentClaw().get(getPath()));
+		cdata = new CData(null, getParentClaw().getResult(getPath()).getValue());
 	}
 
 	@Override

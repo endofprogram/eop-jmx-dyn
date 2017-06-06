@@ -11,7 +11,7 @@ public class MapBuilderTest extends TestCase {
 
 	public void testToMap1() {
 		MapBuilder mb = new MapBuilder();
-		mb.root().keyval("res_code", "0")
+		mb.keyval("res_code", "0")
 				 .keyval("res_desc", "Processing the request succeeded!")
 				 .keymap("result").keymaps("MEALINFOINLIST").keymap("MEALINFOIN").keyval("Col_1", "008W")
 				 																 .keyval("Col_2", "和校园赠20分钟本地主叫")
@@ -37,7 +37,7 @@ public class MapBuilderTest extends TestCase {
 	}
 	public void testToMap2() {
 		MapBuilder mb = new MapBuilder();
-		mb.root().keyval("res_code", "0")
+		mb.keyval("res_code", "0")
 				 .keyval("res_desc", "Processing the request succeeded!")
 				 .keymap("result").keymaps("MEALINFOINLIST").keymap("MEALINFOIN").keyval("Col_1", "008W")
 				 																 .keyval("Col_2", "和校园赠20分钟本地主叫")

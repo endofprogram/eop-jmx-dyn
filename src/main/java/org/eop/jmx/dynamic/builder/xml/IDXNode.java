@@ -1,6 +1,6 @@
 package org.eop.jmx.dynamic.builder.xml;
 
-import org.eop.claw.Claw;
+import org.eop.claw.IClaw;
 import org.eop.jmx.builder.xml.IXNode;
 /**
  * lixinjie 2016-12-26
@@ -13,5 +13,5 @@ public interface IDXNode extends IXNode {
 	
 	void fetchParentClaw();
 	
-	Claw getParentClaw();
+	IClaw getParentClaw();
 }

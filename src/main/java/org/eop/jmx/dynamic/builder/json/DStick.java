@@ -21,7 +21,7 @@ public class DStick extends DJNode {
 	@Override
 	void prepare() {
 		fetchParentClaw();
-		stick = new Stick(null, getName(), getParentClaw().getList(getPath()).toArray());
+		stick = new Stick(null, getName(), getParentClaw().getList(getPath()));
 	}
 
 	@Override

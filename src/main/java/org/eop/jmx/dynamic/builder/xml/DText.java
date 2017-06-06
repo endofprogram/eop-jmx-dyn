@@ -21,7 +21,7 @@ public class DText extends DXNode {
 	@Override
 	void prepare() {
 		fetchParentClaw();
-		text = new Text(null, getParentClaw().get(getPath()));
+		text = new Text(null, getParentClaw().getResult(getPath()).getValue());
 	}
 
 	@Override

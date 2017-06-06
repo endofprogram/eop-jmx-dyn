@@ -21,7 +21,7 @@ public class DLeaf extends DJNode {
 	@Override
 	void prepare() {
 		fetchParentClaw();
-		leaf = new Leaf(null, getName(), getParentClaw().get(getPath()));
+		leaf = new Leaf(null, getName(), getParentClaw().getResult(getPath()).getValue());
 	}
 	
 	@Override

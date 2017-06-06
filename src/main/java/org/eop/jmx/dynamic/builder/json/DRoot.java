@@ -1,6 +1,6 @@
 package org.eop.jmx.dynamic.builder.json;
 
-import org.eop.claw.Claw;
+import org.eop.claw.IClaw;
 import org.eop.jmx.builder.json.ICNode;
 import org.eop.jmx.builder.json.IJNode;
 import org.eop.jmx.builder.json.Root;
@@ -11,7 +11,7 @@ public class DRoot extends DCNode {
 
 	private Root root;
 	
-	public DRoot(IJNode parent, String name, String path, Claw claw) {
+	public DRoot(IJNode parent, String name, String path, IClaw claw) {
 		super(parent, name, path);
 		this.claw = claw;
 		root = new Root(null, name);

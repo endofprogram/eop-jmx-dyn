@@ -1,6 +1,6 @@
 package org.eop.jmx.dynamic.builder.json;
 
-import org.eop.claw.Claw;
+import org.eop.claw.IClaw;
 import org.eop.jmx.builder.json.IJNode;
 import org.eop.jmx.builder.json.JNode;
 /**
@@ -9,7 +9,7 @@ import org.eop.jmx.builder.json.JNode;
 public abstract class DJNode extends JNode implements IDJNode {
 
 	protected String path;
-	protected Claw parentClaw;
+	protected IClaw parentClaw;
 	
 	protected DJNode(IJNode parent, String name, String path) {
 		super(parent, name);
@@ -36,7 +36,7 @@ public abstract class DJNode extends JNode implements IDJNode {
 	}
 	
 	@Override
-	public Claw getParentClaw() {
+	public IClaw getParentClaw() {
 		return parentClaw;
 	}
 	

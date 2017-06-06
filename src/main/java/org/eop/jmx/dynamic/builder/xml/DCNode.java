@@ -2,7 +2,7 @@ package org.eop.jmx.dynamic.builder.xml;
 
 import java.util.List;
 
-import org.eop.claw.Claw;
+import org.eop.claw.IClaw;
 import org.eop.jmx.builder.xml.ICNode;
 import org.eop.jmx.builder.xml.IXNode;
 /**
@@ -10,7 +10,7 @@ import org.eop.jmx.builder.xml.IXNode;
  */
 public abstract class DCNode extends DXNode implements IDCNode {
 
-	protected Claw claw;
+	protected IClaw claw;
 	
 	protected DCNode(IXNode parent, String name, String path) {
 		super(parent, name, path);
@@ -18,11 +18,11 @@ public abstract class DCNode extends DXNode implements IDCNode {
 
 	@Override
 	public void setSelfClaw() {
-		claw = getParentClaw().getClaw(getPath());
+		claw = getParentClaw().getResult(getPath()).getClaw();
 	}
 
 	@Override
-	public Claw getSelfClaw() {
+	public IClaw getSelfClaw() {
 		return claw;
 	}
 

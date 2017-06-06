@@ -1,6 +1,6 @@
 package org.eop.jmx.dynamic.builder.xml;
 
-import org.eop.claw.Claw;
+import org.eop.claw.IClaw;
 import org.eop.jmx.builder.xml.IXNode;
 import org.eop.jmx.builder.xml.XNode;
 /**
@@ -9,7 +9,7 @@ import org.eop.jmx.builder.xml.XNode;
 public abstract class DXNode extends XNode implements IDXNode {
 
 	private String path;
-	private Claw parentClaw;
+	private IClaw parentClaw;
 	
 	protected DXNode(IXNode parent, String name, String path) {
 		super(parent, name);
@@ -36,7 +36,7 @@ public abstract class DXNode extends XNode implements IDXNode {
 	}
 
 	@Override
-	public Claw getParentClaw() {
+	public IClaw getParentClaw() {
 		return parentClaw;
 	}
 

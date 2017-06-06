@@ -21,7 +21,7 @@ public class DComment extends DXNode {
 	@Override
 	void prepare() {
 		fetchParentClaw();
-		comment = new Comment(null, getParentClaw().get(getPath()));
+		comment = new Comment(null, getParentClaw().getResult(getPath()).getValue());
 	}
 
 	@Override
