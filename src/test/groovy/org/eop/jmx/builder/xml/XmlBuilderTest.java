@@ -8,6 +8,7 @@ import java.util.Map;
 
 import org.eop.claw.Claw;
 import org.eop.jmx.builder.XmlBuilder;
+import org.eop.jmx.dyn.builder.XmlDynBuilder;
 
 import junit.framework.TestCase;
 
@@ -61,7 +62,7 @@ public class XmlBuilderTest extends TestCase {
 	
 	public void testToXml1() {
 		XmlBuilder xb = new XmlBuilder();
-		xb.document().rootElement("a").element("b").text("bbb")
+		xb.rootElement("a").element("b").text("bbb")
 												   .end()
 									  .element("c").cdata("ccc")
 									  			   .end()
@@ -71,7 +72,7 @@ public class XmlBuilderTest extends TestCase {
 	
 	public void testToXml2() {
 		XmlBuilder xb = new XmlBuilder();
-		xb.document().rootElement("a").element("b").text("1111")
+		xb.rootElement("a").element("b").text("1111")
 												   .end()
 									  .element("b").text("2222")
 									  			   .end()
@@ -82,34 +83,34 @@ public class XmlBuilderTest extends TestCase {
 	
 	public void testToXml3() {
 		XmlBuilder xb = new XmlBuilder();
-		xb.document().rootElement("a").texts("b", new Object[]{"1111", "2222", "3333"});
+		xb.rootElement("a").texts("b", new Object[]{"1111", "2222", "3333"});
 		assertEquals("<a><b>1111</b><b>2222</b><b>3333</b></a>", xb.toXml());
 	}
 	
 	public void testToXml4() {
 		XmlBuilder xb = new XmlBuilder();
-		xb.document().rootElement("a").cdatas("b", new Object[]{"1111", "2222", "3333"});
+		xb.rootElement("a").cdatas("b", new Object[]{"1111", "2222", "3333"});
 		assertEquals("<a><b><![CDATA[1111]]></b><b><![CDATA[2222]]></b><b><![CDATA[3333]]></b></a>", xb.toXml());
 	}
 	
 	public void testToXml5() {
-		XmlBuilder xb = new XmlBuilder();
-		xb.ddocument(claw).rootElement("response").element("res_code").dtext("res_code<>")
+		XmlDynBuilder xb = new XmlDynBuilder(claw);
+		xb.rootElement("response").element("res_code").dtext("res_code<>")
 															  		  .end()
 												  .dtext("res_desc", "res_desc<>");
 		assertEquals("<response><res_code>0</res_code><res_desc>Processing the request succeeded!</res_desc></response>", xb.toXml());
 	}
 	
 	public void testToXml6() {
-		XmlBuilder xb = new XmlBuilder();
-		xb.ddocument(claw).drootElement("response", "result{}").element("aa").dtexts("a", "MEALINFOUPLIST[]")
+		XmlDynBuilder xb = new XmlDynBuilder(claw);
+		xb.drootElement("response", "result{}").element("aa").dtexts("a", "MEALINFOUPLIST[]")
 															   .end();
 		assertEquals("<response><aa><a>1111</a><a>2222</a><a>3333</a><a>4444</a></aa></response>", xb.toXml());
 	}
 	
 	public void testToXml7() {
-		XmlBuilder xb = new XmlBuilder();
-		xb.ddocument(claw).drootElement("response", "result{}").delement("aa", "MEALINFOGPRSLIST{}").dtext("a", "Col_1<>")
+		XmlDynBuilder xb = new XmlDynBuilder(claw);
+		xb.drootElement("response", "result{}").delement("aa", "MEALINFOGPRSLIST{}").dtext("a", "Col_1<>")
 																									.dtext("b", "Col_2<>")
 																									.dtext("c", "Col_3<>")
 																									.dtext("d", "Col_4<>")
@@ -119,8 +120,8 @@ public class XmlBuilderTest extends TestCase {
 	}
 	
 	public void testToXml8() {
-		XmlBuilder xb = new XmlBuilder();
-		xb.ddocument(claw).drootElement("response", "result{}").delements("aaa", "MEALINFOINLIST[]").delement("aa", "0()").dtext("b", "Col_1<>")
+		XmlDynBuilder xb = new XmlDynBuilder(claw);
+		xb.drootElement("response", "result{}").delements("aaa", "MEALINFOINLIST[]").delement("aa", "0()").dtext("b", "Col_1<>")
 																														  .dtext("c", "Col_2<>")
 																														  .end()
 																									 .end()
