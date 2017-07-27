@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.eop</groupId>
-  <artifactId>jmx-dyn</artifactId>
+  <artifactId>eop-jmx-dyn</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>jmx-dyn</name>
+  <name>eop-jmx-dyn</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -17,17 +17,17 @@
   <dependencies>
     <dependency>
       <groupId>org.eop</groupId>
-      <artifactId>chassis</artifactId>
+      <artifactId>eop-chassis</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>
     	<groupId>org.eop</groupId>
-  		<artifactId>jmx</artifactId>
+  		<artifactId>eop-jmx</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>
     	<groupId>org.eop</groupId>
-  		<artifactId>claw</artifactId>
+  		<artifactId>eop-claw</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>
